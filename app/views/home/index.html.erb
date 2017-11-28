@@ -1,0 +1,36 @@
+<h1>Google Maps - THP</h1>
+
+<!-- Partie formulaire -->
+
+<div class="form">
+<%= form_tag(root_path, method: "get") do %>
+  <%= label_tag(:q, "Latitude :") %>
+  <%= text_field_tag(:latitude)%>
+  
+  <%= label_tag(:q, "Longitude :") %>
+  <%= text_field_tag(:longitude) %>
+  
+  <%= label_tag(:q, "Message :") %>
+  <%= text_field_tag(:message) %>
+  
+  <%= submit_tag("Search") %>
+<% end %>
+
+</div>
+<!-- Fin formulaire -->
+
+<!-- Partie map -->
+
+<div id="map" style="width:100%;height:500px;">
+    
+</div>
+
+<!-- fin map -->
+
+<!-- Appeler le js -->
+<%= javascript_include_tag 'index.js' %>
+
+<!-- appeler api maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgELbhYm01WEOnV7F0SbaVa7Hdt4gUPQc&callback=myMap"></script>
+
+<!-- Fin api maps -->
